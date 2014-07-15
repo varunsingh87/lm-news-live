@@ -80,7 +80,7 @@ Documentation is still to come, but some things that you can do is:
 
 * Set the size of the embedded player by width or height, and it will put the correct aspect radio
 * Set autoplay **on** or **off**
-* Get live streaming ID (?watch=#), Title and Description
+* Get live streaming ID (watch?v=XXXXXXX), Title and Description
 * Get thumbnails, small, medium, large; get channel ID.
 
 Code is commented and is easy to use!!
