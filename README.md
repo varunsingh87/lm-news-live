@@ -6,11 +6,12 @@ PHP Class to embed a live YouTube Streaming / Google Hangouts On Air at an websi
 
 ### Creating the object
 
-    $channelId = 'REPLACE_ME'; // This is the your [channel id][1]
-    $api_key = 'REPLACE_ME'; // This is your [google project api key][2] with youtube api enabled
+    require_once('EmbedYoutubeLiveStreaming.php'); // Use this if the class file from repo is in the same directory
+    $channelId = 'REPLACE_ME'; // This is the your CHANNEL ID
+    $api_key = 'REPLACE_ME'; // This is your google project API KEY with youtube api enabled
     $YouTubeLive = new EmbedYoutubeLiveStreaming($channelId, $api_key);
 
-#### 1. First parameter: Channel ID
+#### 1. First parameter: CHANNEL ID
 
 To know your channel id (which is **not** the channel title, after youtube.com/user/CHANNELTITLE):
 
@@ -20,7 +21,7 @@ To know your channel id (which is **not** the channel title, after youtube.com/u
 4. This lots of nonsense is the channel id you should enter.
 
 
-#### 2. Second parameter: API Key
+#### 2. Second parameter: API KEY
 
 To create your api key:
 
@@ -33,6 +34,7 @@ To create your api key:
 
 Then, as we said, one will create the object using
 
+    require_once('EmbedYoutubeLiveStreaming.php'); 
     $YouTubeLive = new EmbedYoutubeLiveStreaming($CHANNELID, $APIKEY);
 
 And then it will query that channel, and list if there is a Live YouTube Streaming running.
@@ -41,8 +43,9 @@ And then it will query that channel, and list if there is a Live YouTube Streami
 
 #### Demos
 
-##### Seeing if there is a live session and embedding it automatically
+##### Demo 1. Seeing if there is a live session and embedding it automatically
 
+    require_once('EmbedYoutubeLiveStreaming.php'); 
     $YouTubeLive = new EmbedYoutubeLiveStreaming($CHANNELID, $APIKEY);
     if(! $YouTubeLive->isLive )
     {
@@ -53,7 +56,24 @@ And then it will query that channel, and list if there is a Live YouTube Streami
         echo "There is a live streaming happening right now! See below";
 	echo $YouTubeLive->embed_code;
     }
-    
+
+##### Demo 2. Setting autoplay off (default is **ON**)
+
+    require_once('EmbedYoutubeLiveStreaming.php'); 
+
+    $YouTubeLive = new EmbedYoutubeLiveStreaming($CHANNELID, $APIKEY);
+
+    if(! $YouTubeLive->isLive )
+    {
+        echo "There is currently no live streaming for the channel!";
+    }
+    else
+    {
+        echo "There is a live streaming happening right now! See below";
+        $YouTubeLive->embed_autoplay = false;
+        echo $YouTubeLive->embedCode(); // you use the method for direct output
+    }
+
 ## Documentation
 
 Documentation is still to come, but some things that you can do is:
