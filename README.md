@@ -1,16 +1,16 @@
-## YouTube Live Embed PHP Class
+# YouTube Live Embed PHP Class
 
 PHP Class to embed a live YouTube Streaming / Google Hangouts On Air at an website.
 
-### Usage
+## Usage
 
-#### Creating the object
+### Creating the object
 
     $channelId = 'REPLACE_ME'; // This is the your [channel id][1]
     $api_key = 'REPLACE_ME'; // This is your [google project api key][2] with youtube api enabled
     $YouTubeLive = new EmbedYoutubeLiveStreaming($channelId, $api_key);
 
-##### 1. First parameter: Channel ID
+#### 1. First parameter: Channel ID
 
 To know your channel id (which is **not** the channel title, after youtube.com/user/CHANNELTITLE):
 
@@ -20,7 +20,7 @@ To know your channel id (which is **not** the channel title, after youtube.com/u
 4. This lots of nonsense is the channel id you should enter.
 
 
-##### 2. Second parameter: API Key
+#### 2. Second parameter: API Key
 
 To create your api key:
 
@@ -29,7 +29,7 @@ To create your api key:
 3. Create a credential  of type "Public API Access", a "Server key", with the IPs from the server you will query the API from.
 4. This will create an API Key for you, which you should copy and then use it for the second parameter when creating the Object fr the clas.
 
-#### Using it
+### Using it
 
 Then, as we said, one will create the object using
 
@@ -37,11 +37,11 @@ Then, as we said, one will create the object using
 
 And then it will query that channel, and list if there is a Live YouTube Streaming running.
 
-** It takes some seconds after the session is live for the server to tell that it is live. **
+**It takes some seconds after the session is live for the server to tell that it is live.**
 
-##### Demos
+#### Demos
 
-###### Seeing if there is a live session and embedding it automatically
+##### Seeing if there is a live session and embedding it automatically
 
     $YouTubeLive = new EmbedYoutubeLiveStreaming($CHANNELID, $APIKEY);
     if(! $YouTubeLive->isLive )
@@ -54,7 +54,7 @@ And then it will query that channel, and list if there is a Live YouTube Streami
 	echo $YouTubeLive->embed_code;
     }
     
-### Documentation
+## Documentation
 
 Documentation is still to come, but some things that you can do is:
 
