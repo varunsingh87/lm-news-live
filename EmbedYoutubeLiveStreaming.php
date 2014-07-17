@@ -23,6 +23,7 @@ class EmbedYoutubeLiveStreaming
 
 	public $default_embed_width;
 	public $default_embed_height;
+	public $default_ratio;
 
 	public $embed_code; // contain the embed code
 	public $embed_autoplay;
@@ -54,6 +55,8 @@ class EmbedYoutubeLiveStreaming
 
 		$this->default_embed_width = "560";
 		$this->default_embed_height = "315";
+		$this->default_ratio = $this->default_embed_width / $this->default_embed_height;
+
 		$this->embed_width = $this->default_embed_width;
 		$this->embed_height = $this->default_embed_height;
 
