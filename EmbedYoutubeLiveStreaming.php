@@ -125,7 +125,7 @@ class EmbedYoutubeLiveStreaming
 		$this->embed_width = $width;
 		$this->embed_height = $width / $ratio;
 
-		if( $refill_var == true ) { $this->embedCode(); }
+		if( $refill_code == true ) { $this->embedCode(); }
 	}
 
 	public function setEmbedSizeByHeight($height, $refill_code = true)
