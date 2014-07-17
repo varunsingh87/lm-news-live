@@ -119,18 +119,22 @@ class EmbedYoutubeLiveStreaming
 		}
 	}
 
-	public function setEmbedSizeByWidth($width)
+	public function setEmbedSizeByWidth($width, $refill_code = true)
 	{
 		$ratio = $this->default_embed_width / $this->default_embed_height;
 		$this->embed_width = $width;
 		$this->embed_height = $width / $ratio;
+
+		if( $refill_var == true ) { $this->embedCode(); }
 	}
 
-	public function setEmbedSizeByHeight($height)
+	public function setEmbedSizeByHeight($height, $refill_code = true)
 	{
                 $ratio = $this->default_embed_width / $this->default_embed_height;
                 $this->embed_height = $height;
                 $this->embed_width = $height * $ratio;
+
+		if( $refill_code == true ) { $this->embedCode(); }
 	}
 
 	public function embedCode()
