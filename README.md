@@ -7,8 +7,10 @@ PHP Class to embed a live YouTube Streaming / Google Hangouts On Air at an websi
 ### Creating the object
 
     require_once('EmbedYoutubeLiveStreaming.php'); // Use this if the class file from repo is in the same directory
+    
     $channelId = 'REPLACE_ME'; // This is the your CHANNEL ID
     $api_key = 'REPLACE_ME'; // This is your google project API KEY with youtube api enabled
+    
     $YouTubeLive = new EmbedYoutubeLiveStreaming($channelId, $api_key);
 
 #### 1. First parameter: CHANNEL ID
@@ -46,6 +48,10 @@ And then it will query that channel, and list if there is a Live YouTube Streami
 ##### Demo 1. Seeing if there is a live session and embedding it automatically
 
     require_once('EmbedYoutubeLiveStreaming.php'); 
+    
+    $CHANNELID = 'REPLACE_ME';
+    $APIKEY = 'REPLACE_ME';
+    
     $YouTubeLive = new EmbedYoutubeLiveStreaming($CHANNELID, $APIKEY);
     if(! $YouTubeLive->isLive )
     {
@@ -59,8 +65,11 @@ And then it will query that channel, and list if there is a Live YouTube Streami
 
 ##### Demo 2. Setting autoplay off (default is **ON**)
 
-    require_once('EmbedYoutubeLiveStreaming.php'); 
-
+    require_once('EmbedYoutubeLiveStreaming.php');
+    
+    $CHANNELID = 'REPLACE_ME';
+    $APIKEY = 'REPLACE_ME';
+    
     $YouTubeLive = new EmbedYoutubeLiveStreaming($CHANNELID, $APIKEY);
 
     if(! $YouTubeLive->isLive )
