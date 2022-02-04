@@ -24,7 +24,7 @@
 
 require_once('EmbedYoutubeLiveStreaming.php');
 
-$channelId = "REPLACE_ME";
+$channelId = "UC8OMY2k2K1IpBcuDZdrs-iA";
 $api_key = "REPLACE_ME";
 
 $YouTubeLive = new EmbedYoutubeLiveStreaming($channelId,$api_key);
